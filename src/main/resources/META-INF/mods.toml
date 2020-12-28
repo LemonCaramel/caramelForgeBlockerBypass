@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[0,)"
+license="MIT"
+[[mods]]
+    modId="caramelforgeblockerbypass"
+    version="${file.jarVersion}"
+    displayName="caramelForgeBlockerBypass"
+    displayURL="https://github.com/LemonCaramel/caramelForgeBlockerBypass/"
+    authors="LemonCaramel"
+    description='AntiForge Bypass Mod'
+[[dependencies.caramelforgeblockerbypass]]
+    modId="forge"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.caramelforgeblockerbypass]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
