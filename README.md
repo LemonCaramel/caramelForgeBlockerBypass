@@ -11,6 +11,10 @@
 
 --------
 
+Preview
+--------
+![There is no eternal shield](https://user-images.githubusercontent.com/45729082/103235450-92f5ea80-4985-11eb-8279-20d3a9d3512f.gif)
+
 Introduction
 --------
  - **Warning!** This mod was developed for experiments to prove that there is no permanent shield. You are responsible for the use of this mod.
