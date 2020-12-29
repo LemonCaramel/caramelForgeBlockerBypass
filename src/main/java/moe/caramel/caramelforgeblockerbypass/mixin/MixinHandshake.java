@@ -20,8 +20,8 @@ public abstract class MixinHandshake {
     private ProtocolType requestedState;
 
     /**
-     * @reason Remove FML2 character.
      * @author LemonCaramel
+     * @reason Remove FML2 character.
      */
     @Overwrite
     public void writePacketData(PacketBuffer buf) {
