@@ -18,7 +18,8 @@ Preview
 Introduction
 --------
  - **Warning!** This mod was developed for experiments to prove that there is no permanent shield. You are responsible for the use of this mod.
- - This mod bypasses the [Forge Mod Loader](https://github.com/MinecraftForge/MinecraftForge) [blocking plugin.](https://github.com/LemonCaramel/caramelForgeBlocker) _(FML2 HandShake detection bypass not implemented)_
+ - This mod bypasses the [Forge Mod Loader](https://github.com/MinecraftForge/MinecraftForge) [blocking plugin.](https://github.com/LemonCaramel/caramelForgeBlocker)
+   - This mod allows you to bypass Brand name detection, FML2 protocol detection, and FML2 handshake detection, which are currently the only Forge client detection methods.
 
 Compile and Extract jar
 --------

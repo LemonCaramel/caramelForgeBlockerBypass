@@ -18,7 +18,8 @@
 소개
 --------
  - **주의!** 이 모드는 영원한 방패는 없다는 것을 증명하기 위해 실험용으로 개발되었습니다. 이 모드를 사용함으로써 발생하는 책임은 본인에게 있습니다.
- - 이 모드는 [Forge Mod Loader](https://github.com/MinecraftForge/MinecraftForge) [차단 플러그인을](https://github.com/LemonCaramel/caramelForgeBlocker) 우회하는 모드입니다. _(FML2 HandShake 감지 우회는 미구현)_
+ - 이 모드는 [Forge Mod Loader](https://github.com/MinecraftForge/MinecraftForge) [차단 플러그인을](https://github.com/LemonCaramel/caramelForgeBlocker) 우회하는 모드입니다.
+   - 현재 유일한 Forge 클라이언트 감지 방법인 Brand 이름 감지, FML2 프로토콜 감지, FML2 Handshake 감지를 우회할 수 있습니다.
 
 
 컴파일 및 jar 추출
