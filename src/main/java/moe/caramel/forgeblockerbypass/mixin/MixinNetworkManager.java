@@ -1,4 +1,4 @@
-package moe.caramel.caramelforgeblockerbypass.mixin;
+package moe.caramel.forgeblockerbypass.mixin;
 
 import io.netty.buffer.Unpooled;
 import net.minecraft.network.NetworkManager;
@@ -19,17 +19,17 @@ public abstract class MixinNetworkManager {
     }
 
     @Inject(
-            method = "sendPacket(Lnet/minecraft/network/IPacket;)V",
+            method = "send(Lnet/minecraft/network/IPacket;)V",
             at = {@At("HEAD")},
             cancellable = true
     )
-    private void sendPacket(IPacket<?> packet, CallbackInfo callbackInfo) {
+    private void sendPacket(IPacket<?> packet, CallbackInfo ci) {
         if (packet instanceof CCustomPayloadPacket) {
             CCustomPayloadPacket customPayloadPacket = (CCustomPayloadPacket) packet;
             if (customPayloadPacket.getName() == CCustomPayloadPacket.BRAND) {
                 try {
-                    customPayloadPacket.readPacketData(new PacketBuffer(Unpooled.buffer())
-                            .writeResourceLocation(CCustomPayloadPacket.BRAND).writeString("vanilla"));
+                    customPayloadPacket.read(new PacketBuffer(Unpooled.buffer())
+                            .writeResourceLocation(CCustomPayloadPacket.BRAND).writeUtf("vanilla"));
                 } catch (IOException exception) {
                     exception.printStackTrace();
                 }

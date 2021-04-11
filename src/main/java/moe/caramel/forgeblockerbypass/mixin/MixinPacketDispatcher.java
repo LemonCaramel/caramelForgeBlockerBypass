@@ -1,4 +1,4 @@
-package moe.caramel.caramelforgeblockerbypass.mixin;
+package moe.caramel.forgeblockerbypass.mixin;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;

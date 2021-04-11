@@ -1,7 +1,8 @@
 {
   "required": true,
-  "package": "moe.caramel.caramelforgeblockerbypass.mixin",
-  "minVersion": "0.6",
+  "package": "moe.caramel.forgeblockerbypass.mixin",
+  "refmap": "mixins.forgeblockerbypass.refmap.json",
+  "minVersion": "0.8.2",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "MixinHandshake",

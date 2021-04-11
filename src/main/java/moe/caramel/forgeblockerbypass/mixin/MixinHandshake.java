@@ -1,4 +1,4 @@
-package moe.caramel.caramelforgeblockerbypass.mixin;
+package moe.caramel.forgeblockerbypass.mixin;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.ProtocolType;
@@ -11,24 +11,24 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class MixinHandshake {
 
     @Shadow
-    private int port;
-    @Shadow
-    private String ip;
-    @Shadow
     private int protocolVersion;
     @Shadow
-    private ProtocolType requestedState;
+    private String hostName;
+    @Shadow
+    private int port;
+    @Shadow
+    private ProtocolType intention;
 
     /**
      * @author LemonCaramel
      * @reason Remove FML2 character.
      */
     @Overwrite
-    public void writePacketData(PacketBuffer buf) {
+    public void write(PacketBuffer buf) {
         buf.writeVarInt(this.protocolVersion);
-        buf.writeString(this.ip);
+        buf.writeUtf(this.hostName);
         buf.writeShort(this.port);
-        buf.writeVarInt(this.requestedState.getId());
+        buf.writeVarInt(this.intention.getId());
     }
 
 }

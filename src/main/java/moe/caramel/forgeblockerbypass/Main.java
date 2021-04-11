@@ -1,4 +1,4 @@
-package moe.caramel.caramelforgeblockerbypass;
+package moe.caramel.forgeblockerbypass;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -13,7 +13,7 @@ public class Main {
 
     public Main() {
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.caramelforgeblockerbypass.json");
+        Mixins.addConfiguration("mixins.forgeblockerbypass.json");
         MixinEnvironment.getDefaultEnvironment().setSide(MixinEnvironment.Side.CLIENT);
     }
 
