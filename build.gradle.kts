@@ -66,11 +66,16 @@ configure<BasePluginConvention> {
     archivesBaseName = modBaseName
 }
 
+dependencies {
+    "minecraft"("net.minecraftforge:forge:1.16.5-36.1.0")
+    "annotationProcessor"("org.spongepowered:mixin:0.8.2:processor")
+}
+
 sourceSets["main"].resources.srcDir("src/generated/resources")
 
 tasks.named<Copy>("processResources") {
     val properties = mapOf(
-            "version" to project.version,
+            "version" to modVersion,
             "forgeVersion" to forgeVersion,
             "minecraftVersion" to minecraftVersion,
             "MixinConfigs" to "mixins.forgeblockerbypass.json"
@@ -78,9 +83,8 @@ tasks.named<Copy>("processResources") {
     properties.forEach { (key, value) ->
         inputs.property(key, value)
     }
-}
 
-dependencies {
-    "minecraft"("net.minecraftforge:forge:1.16.5-36.1.0")
-    "annotationProcessor"("org.spongepowered:mixin:0.8.2:processor")
+    filesMatching("/META-INF/mods.toml") {
+        expand("modversion" to modVersion)
+    }
 }

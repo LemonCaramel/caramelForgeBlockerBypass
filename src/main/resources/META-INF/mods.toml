@@ -3,7 +3,7 @@ loaderVersion="[0,)"
 license="MIT"
 [[mods]]
     modId="caramelforgeblockerbypass"
-    version="${file.jarVersion}"
+    version="${modversion}"
     displayName="caramelForgeBlockerBypass"
     displayURL="https://github.com/LemonCaramel/caramelForgeBlockerBypass/"
     authors="LemonCaramel"

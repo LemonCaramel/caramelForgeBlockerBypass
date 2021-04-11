@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "moe.caramel.forgeblockerbypass.mixin",
-  "refmap": "mixins.forgeblockerbypass.refmap.json",
+  "refmap": "mixin.refmap.json",
   "minVersion": "0.8.2",
   "compatibilityLevel": "JAVA_8",
   "client": [
