@@ -1,5 +1,6 @@
 package moe.caramel.forgeblockerbypass.mixin;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.PacketDispatcher;
@@ -21,8 +22,12 @@ public abstract class MixinPacketDispatcher {
      */
     @Overwrite(remap = false)
     public void sendPacket(ResourceLocation resourceLocation, PacketBuffer buffer) {
-        if (!resourceLocation.getNamespace().equals("fml"))
+        if (!Minecraft.getInstance().isLocalServer()) {
+            if (!resourceLocation.getNamespace().equals("fml"))
+                packetSink.accept(resourceLocation, buffer);
+        } else {
             packetSink.accept(resourceLocation, buffer);
+        }
     }
 
 }
