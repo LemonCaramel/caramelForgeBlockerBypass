@@ -71,7 +71,12 @@ dependencies {
     "annotationProcessor"("org.spongepowered:mixin:0.8.2:processor")
 }
 
-sourceSets["main"].resources.srcDir("src/generated/resources")
+sourceSets {
+    main {
+        resources.srcDir("src/generated/resources")
+        ext.set("refMap", "mixins.forgeblockerbypass.refmap.json")
+    }
+}
 
 tasks.named<Copy>("processResources") {
     val properties = mapOf(
