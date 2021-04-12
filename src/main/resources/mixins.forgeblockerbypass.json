@@ -5,7 +5,6 @@
   "minVersion": "0.8.2",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "MixinMinecraft",
     "MixinHandshake",
     "MixinNetworkManager",
     "MixinPacketDispatcher"
