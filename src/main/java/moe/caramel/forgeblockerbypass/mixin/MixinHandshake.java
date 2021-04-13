@@ -13,22 +13,22 @@ public abstract class MixinHandshake {
     @Shadow
     private int protocolVersion;
     @Shadow
-    private String hostName;
+    private String ip;
     @Shadow
     private int port;
     @Shadow
-    private ProtocolType intention;
+    private ProtocolType requestedState;
 
     /**
      * @author LemonCaramel
      * @reason Remove FML2 character.
      */
     @Overwrite
-    public void write(PacketBuffer buf) {
+    public void writePacketData(PacketBuffer buf) {
         buf.writeVarInt(this.protocolVersion);
-        buf.writeUtf(this.hostName);
+        buf.writeString(this.ip);
         buf.writeShort(this.port);
-        buf.writeVarInt(this.intention.getId());
+        buf.writeVarInt(this.requestedState.getId());
     }
 
 }

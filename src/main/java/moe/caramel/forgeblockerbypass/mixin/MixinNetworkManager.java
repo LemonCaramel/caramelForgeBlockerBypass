@@ -19,7 +19,7 @@ public abstract class MixinNetworkManager {
     }
 
     @Inject(
-            method = "send(Lnet/minecraft/network/IPacket;)V",
+            method = "sendPacket(Lnet/minecraft/network/IPacket;)V",
             at = {@At("HEAD")},
             cancellable = true
     )
@@ -28,8 +28,8 @@ public abstract class MixinNetworkManager {
             CCustomPayloadPacket customPayloadPacket = (CCustomPayloadPacket) packet;
             if (customPayloadPacket.getName() == CCustomPayloadPacket.BRAND) {
                 try {
-                    customPayloadPacket.read(new PacketBuffer(Unpooled.buffer())
-                            .writeResourceLocation(CCustomPayloadPacket.BRAND).writeUtf("vanilla"));
+                    customPayloadPacket.readPacketData(new PacketBuffer(Unpooled.buffer())
+                            .writeResourceLocation(CCustomPayloadPacket.BRAND).writeString("vanilla"));
                 } catch (IOException exception) {
                     exception.printStackTrace();
                 }

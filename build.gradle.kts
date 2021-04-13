@@ -35,6 +35,8 @@ val modVersion: String by project
 val modBaseName: String by project
 val forgeVersion: String by project
 val minecraftVersion: String by project
+val mapChannel: String by project
+val mapVersion: String by project
 
 base {
     version = modVersion
@@ -43,8 +45,8 @@ base {
 
 configure<UserDevExtension> {
     mappings(mapOf(
-            "channel" to "official",
-            "version" to minecraftVersion
+            "channel" to mapChannel,
+            "version" to mapVersion
     ))
 
     runs {

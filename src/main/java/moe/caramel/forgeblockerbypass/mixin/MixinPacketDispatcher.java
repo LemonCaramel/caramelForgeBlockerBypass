@@ -22,7 +22,7 @@ public abstract class MixinPacketDispatcher {
      */
     @Overwrite(remap = false)
     public void sendPacket(ResourceLocation resourceLocation, PacketBuffer buffer) {
-        if (!Minecraft.getInstance().isLocalServer()) {
+        if (!Minecraft.getInstance().isSingleplayer()) {
             if (!resourceLocation.getNamespace().equals("fml"))
                 packetSink.accept(resourceLocation, buffer);
         } else {
